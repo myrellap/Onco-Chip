@@ -17,5 +17,6 @@ namespace Onco_Chip.Data
         public DbSet<Onco_Chip.Models.App> App { get; set; } = default!;
         public DbSet<Onco_Chip.Models.Cadastro> Cadastro { get; set; } = default!;
         public DbSet<Onco_Chip.Models.Contato> Contato { get; set; } = default!;
+        public DbSet<Onco_Chip.Models.Paciente> Paciente { get; set; } = default!;
     }
 }
