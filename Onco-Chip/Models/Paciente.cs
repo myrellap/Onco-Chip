@@ -1,6 +1,6 @@
 ﻿namespace Onco_Chip.Models
 {
-    public class Paciente
+    public class App
     {
         public string? Nome { get; set; }
         public string? Id { get; set; }

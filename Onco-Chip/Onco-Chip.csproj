@@ -10,25 +10,21 @@
 
 	<ItemGroup>
 		<Compile Remove="NovaPasta\**" />
-		<Compile Remove="wwwroot\img\**" />
 		<Compile Remove="wwwroot\NovaPasta1\**" />
 		<Compile Remove="wwwroot\NovaPasta2\**" />
 		<Compile Remove="wwwroot\NovaPasta3\**" />
 		<Compile Remove="wwwroot\NovaPasta\**" />
 		<Content Remove="NovaPasta\**" />
-		<Content Remove="wwwroot\img\**" />
 		<Content Remove="wwwroot\NovaPasta1\**" />
 		<Content Remove="wwwroot\NovaPasta2\**" />
 		<Content Remove="wwwroot\NovaPasta3\**" />
 		<Content Remove="wwwroot\NovaPasta\**" />
 		<EmbeddedResource Remove="NovaPasta\**" />
-		<EmbeddedResource Remove="wwwroot\img\**" />
 		<EmbeddedResource Remove="wwwroot\NovaPasta1\**" />
 		<EmbeddedResource Remove="wwwroot\NovaPasta2\**" />
 		<EmbeddedResource Remove="wwwroot\NovaPasta3\**" />
 		<EmbeddedResource Remove="wwwroot\NovaPasta\**" />
 		<None Remove="NovaPasta\**" />
-		<None Remove="wwwroot\img\**" />
 		<None Remove="wwwroot\NovaPasta1\**" />
 		<None Remove="wwwroot\NovaPasta2\**" />
 		<None Remove="wwwroot\NovaPasta3\**" />
@@ -46,7 +42,6 @@
 
 	<ItemGroup>
 	  <Folder Include="Views\NovaPasta1\" />
-	  <Folder Include="wwwroot\NovaPasta4\" />
 	</ItemGroup>
 
 </Project>
