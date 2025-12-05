@@ -5,7 +5,7 @@ namespace Onco_Chip.Models
 {
     public class Cliente
     {
-        [Key]                                
+        [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
@@ -14,7 +14,7 @@ namespace Onco_Chip.Models
 
         [Required]
         [EmailAddress]
-        public string Email { get; set; }
+        public string? Email { get; set; }
 
         [Required]
         [MinLength(6)]
@@ -22,7 +22,7 @@ namespace Onco_Chip.Models
 
         [Required]
         [Compare("Senha", ErrorMessage = "As senhas não coincidem")]
-        public string ConfirmarSenha { get; set; }
+        public string? ConfirmarSenha { get; set; }
 
     }
 }
