@@ -82,7 +82,7 @@
 
 <div class="d-flex flex-column justify-content-center align-items-center">
 
-	<form method="post">
+	<form method="post" id="account">
 
 		<h2 class="text-center">Faça seu Login</h2>
 
@@ -96,7 +96,7 @@
 		<input asp-for="Input.Password" type="password" placeholder="Digite sua senha" />
 		<span asp-validation-for="Input.Password" class="erro"></span>
 
-		<button class="btn-login" type="submit">Login</button>
+		<button id="login-submit" class="btn-login" type="submit">Login</button>
 
 		<p class="text-center pt-4 textoVerde">Não possui login? <a class="text-decoration-none textoVerde" asp-page="./Register">Faça seu cadastro</a></p>
 
