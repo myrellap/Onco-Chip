@@ -12,12 +12,7 @@ namespace Onco_Chip.Data
         public DbSet<App> Apps { get; set; }
         public DbSet<Cadastro> Cadastros { get; set; }
         public DbSet<Contato> Contatos { get; set; }
-
-
-        public DbSet<Onco_Chip.Models.App> App { get; set; } = default!;
-        public DbSet<Onco_Chip.Models.Cadastro> Cadastro { get; set; } = default!;
-        public DbSet<Onco_Chip.Models.Contato> Contato { get; set; } = default!;
-        public DbSet<Onco_Chip.Models.Paciente> Paciente { get; set; } = default!;
-        public DbSet<Onco_Chip.Models.Cliente> Cliente { get; set; } = default!;
+        public DbSet<Paciente> Pacientes { get; set; }
+        public DbSet<Cliente> Clientes { get; set; }
     }
 }

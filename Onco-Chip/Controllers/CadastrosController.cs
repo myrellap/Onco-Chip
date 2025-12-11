@@ -22,7 +22,7 @@ namespace Onco_Chip.Controllers
         // GET: Cadastros
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Cadastro.ToListAsync());
+            return View(await _context.Cadastros.ToListAsync());
         }
 
         // GET: Cadastros/Details/5
@@ -33,7 +33,7 @@ namespace Onco_Chip.Controllers
                 return NotFound();
             }
 
-            var cadastro = await _context.Cadastro
+            var cadastro = await _context.Cadastros
                 .FirstOrDefaultAsync(m => m.CadastroId == id);
             if (cadastro == null)
             {
@@ -73,7 +73,7 @@ namespace Onco_Chip.Controllers
                 return NotFound();
             }
 
-            var cadastro = await _context.Cadastro.FindAsync(id);
+            var cadastro = await _context.Cadastros.FindAsync(id);
             if (cadastro == null)
             {
                 return NotFound();
@@ -124,7 +124,7 @@ namespace Onco_Chip.Controllers
                 return NotFound();
             }
 
-            var cadastro = await _context.Cadastro
+            var cadastro = await _context.Cadastros
                 .FirstOrDefaultAsync(m => m.CadastroId == id);
             if (cadastro == null)
             {
@@ -139,10 +139,10 @@ namespace Onco_Chip.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var cadastro = await _context.Cadastro.FindAsync(id);
+            var cadastro = await _context.Cadastros.FindAsync(id);
             if (cadastro != null)
             {
-                _context.Cadastro.Remove(cadastro);
+                _context.Cadastros.Remove(cadastro);
             }
 
             await _context.SaveChangesAsync();
@@ -151,7 +151,7 @@ namespace Onco_Chip.Controllers
 
         private bool CadastroExists(int id)
         {
-            return _context.Cadastro.Any(e => e.CadastroId == id);
+            return _context.Cadastros.Any(e => e.CadastroId == id);
         }
     }
 }

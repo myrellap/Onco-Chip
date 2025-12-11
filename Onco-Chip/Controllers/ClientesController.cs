@@ -22,7 +22,7 @@ namespace Onco_Chip.Controllers
         // GET: Clientes
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Cliente.ToListAsync());
+            return View(await _context.Clientes.ToListAsync());
         }
 
         // GET: Clientes/Details/5
@@ -33,7 +33,7 @@ namespace Onco_Chip.Controllers
                 return NotFound();
             }
 
-            var cliente = await _context.Cliente
+            var cliente = await _context.Clientes
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (cliente == null)
             {
@@ -73,7 +73,7 @@ namespace Onco_Chip.Controllers
                 return NotFound();
             }
 
-            var cliente = await _context.Cliente.FindAsync(id);
+            var cliente = await _context.Clientes.FindAsync(id);
             if (cliente == null)
             {
                 return NotFound();
@@ -124,7 +124,7 @@ namespace Onco_Chip.Controllers
                 return NotFound();
             }
 
-            var cliente = await _context.Cliente
+            var cliente = await _context.Clientes
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (cliente == null)
             {
@@ -139,10 +139,10 @@ namespace Onco_Chip.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var cliente = await _context.Cliente.FindAsync(id);
+            var cliente = await _context.Clientes.FindAsync(id);
             if (cliente != null)
             {
-                _context.Cliente.Remove(cliente);
+                _context.Clientes.Remove(cliente);
             }
 
             await _context.SaveChangesAsync();
@@ -151,7 +151,7 @@ namespace Onco_Chip.Controllers
 
         private bool ClienteExists(int id)
         {
-            return _context.Cliente.Any(e => e.Id == id);
+            return _context.Clientes.Any(e => e.Id == id);
         }
 
 

@@ -9,11 +9,11 @@ using Onco_Chip.Data;
 
 #nullable disable
 
-namespace Onco_Chip.Data.Migrations
+namespace Onco_Chip.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20251114194341_Onco-Chip")]
-    partial class OncoChip
+    [Migration("20251211130647_InitialDb")]
+    partial class InitialDb
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -229,23 +229,49 @@ namespace Onco_Chip.Data.Migrations
 
             modelBuilder.Entity("Onco_Chip.Models.App", b =>
                 {
-                    b.Property<int>("AppId")
-                        .ValueGeneratedOnAdd()
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("BateriaPercent")
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AppId"));
+                    b.Property<string>("ChipStatus")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Idade")
+                        .HasColumnType("int");
+
+                    b.Property<string>("MensagemComunicacao")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nome")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Observacoes")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PermiteAjustarDosagem")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("PermiteSolicitarExames")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("ProgressoTratamentoPercent")
+                        .HasColumnType("int");
+
+                    b.PrimitiveCollection<string>("RespostaCelulas")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("versao")
-                        .IsRequired()
+                    b.Property<string>("Temperatura")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("AppId");
+                    b.Property<DateTime>("UltimaSincronizacao")
+                        .HasColumnType("datetime2");
 
-                    b.ToTable("App");
+                    b.HasKey("Id");
+
+                    b.ToTable("Apps");
                 });
 
             modelBuilder.Entity("Onco_Chip.Models.Cadastro", b =>
@@ -271,7 +297,123 @@ namespace Onco_Chip.Data.Migrations
 
                     b.HasKey("CadastroId");
 
-                    b.ToTable("Cadastro");
+                    b.ToTable("Cadastros");
+                });
+
+            modelBuilder.Entity("Onco_Chip.Models.Cliente", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ConfirmarSenha")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NomeCompleto")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Senha")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Clientes");
+                });
+
+            modelBuilder.Entity("Onco_Chip.Models.Contato", b =>
+                {
+                    b.Property<int>("ContatoId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ContatoId"));
+
+                    b.Property<DateTime>("DataCadastro")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Endereco")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Observacao")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Telefone")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.HasKey("ContatoId");
+
+                    b.ToTable("Contatos");
+                });
+
+            modelBuilder.Entity("Onco_Chip.Models.Paciente", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("BateriaPercent")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ChipStatus")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Idade")
+                        .HasColumnType("int");
+
+                    b.Property<string>("MensagemComunicacao")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nome")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Observacoes")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PermiteAjustarDosagem")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("PermiteSolicitarExames")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("ProgressoTratamentoPercent")
+                        .HasColumnType("int");
+
+                    b.PrimitiveCollection<string>("RespostaCelulas")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Temperatura")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("UltimaSincronizacao")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Pacientes");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
