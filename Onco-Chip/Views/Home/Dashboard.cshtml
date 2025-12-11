@@ -1,0 +1,148 @@
+﻿@* Local: Views/Dashboard/Index.cshtml
+   Depende do Bootstrap 5 e suas classes. *@
+
+@{
+	ViewData["Title"] = "Dashboard ONCO-CHIP";
+}
+
+<style>
+	/* Se você estiver importando este código para o seu _Layout.cshtml,
+							certifique-se de que o link para o CSS do Bootstrap 5 esteja presente.
+							Exemplo: <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+							*/
+
+	:root {
+		--app-bg: #e5ffe5; /* Verde claro principal */
+		--panel-bg: #c8e6c9; /* Verde médio dos painéis */
+		--accent-green: #388e3c; /* Verde escuro para acentos, textos e barras */
+		--progress-track: #a5d6a7; /* Verde da trilha de progresso */
+		--alert-orange: #ffccbc; /* Fundo do alerta suave */
+		--alert-red: #d32f2f; /* Fundo do alerta crítico */
+	}
+
+	.bg-app {
+		background-color: var(--app-bg) !important;
+	}
+
+	.bg-panel {
+		background-color: var(--panel-bg) !important;
+	}
+
+	.bg-accent {
+		background-color: var(--accent-green) !important;
+	}
+
+	.text-accent {
+		color: var(--accent-green) !important;
+	}
+
+	.progress-track {
+		background-color: var(--progress-track) !important;
+	}
+
+	.alert-soft {
+		background-color: var(--alert-orange) !important;
+		color: var(--alert-red) !important;
+	}
+</style>
+
+<div class="container-fluid bg-app p-4 m-0 w-100" style="min-height: 100vh;">
+
+	<header class="d-flex justify-content-between align-items-center mb-4">
+		<span class="fs-2 fw-bold text-accent">>></span>
+		<h1 class="text-accent fw-bold m-0" style="font-size: 1.8rem;">Painel de Tratamento ONCO-CHIP</h1>
+		<div class="d-flex gap-2">
+			<button class="btn bg-accent text-white fw-bold">EXPORTAR PDF</button>
+			<button class="btn bg-accent text-white fw-bold">AJUDA</button>
+		</div>
+	</header>
+
+	<div class="d-flex justify-content-between mb-4 fw-medium" style="font-size: 1.1rem;">
+		<span>Paciente: **João da silva**</span>
+		<span>ID: **289877**</span>
+		<span>Idade: **58**</span>
+	</div>
+
+	<div class="row g-4">
+
+		<div class="col-lg-4">
+
+			<div class="card bg-panel p-3 mb-4 border-0 rounded-3">
+				<p class="fw-bold mb-2 text-accent">CHIP</p>
+				<div class="small">
+					<p class="mb-1">• Operacional: **Sim**</p>
+					<p class="mb-1">Bateria</p>
+					<div class="progress progress-track mb-2" style="height: 8px;">
+						<div class="progress-bar bg-accent" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+					</div>
+					<span class="d-block text-end fw-bold" style="margin-top: -18px; margin-bottom: 5px; font-size: 0.8rem;">80%</span>
+
+					<p class="mb-1">Temperatura: **36°C**</p>
+					<p class="mb-0">Última Sincronização: **18:15**</p>
+				</div>
+			</div>
+
+			<div class="card bg-panel p-3 border-0 rounded-3">
+				<p class="fw-bold mb-2 text-accent">SINAIS VITAIS DO CHIP</p>
+				<div class="small">
+					<p class="mb-1">Bateria</p>
+					<div class="progress progress-track mb-2" style="height: 8px;">
+						<div class="progress-bar bg-accent" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+					</div>
+					<span class="d-block text-end fw-bold" style="margin-top: -18px; margin-bottom: 5px; font-size: 0.8rem;">85%</span>
+
+					<p class="mb-1">Temperatura: **36°C**</p>
+
+					<p class="mb-1">Tratamento</p>
+					<div class="progress progress-track mb-2" style="height: 8px;">
+						<div class="progress-bar bg-accent" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+					</div>
+					<span class="d-block text-end fw-bold" style="margin-top: -18px; margin-bottom: 5px; font-size: 0.8rem;">65%</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-lg-4">
+
+			<div class="card bg-panel p-3 mb-4 border-0 rounded-3">
+				<p class="fw-bold mb-2 text-accent">PROCESSO DO TRATAMENTO</p>
+				<div class="d-flex align-items-center">
+					<span class="fw-bold me-3">65%</span>
+					<div class="progress progress-track w-100" style="height: 8px;">
+						<div class="progress-bar bg-accent" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="mb-4">
+				<p class="fw-bold mb-2 text-accent">NOTAS RÁPIDAS</p>
+				<div class="alert alert-soft p-2 mb-2 border-0 rounded-3 small fw-medium">
+					*Pode haver desvio*
+				</div>
+				<div class="alert bg-danger text-white p-2 mb-0 border-0 rounded-3 small fw-bold">
+					FALHA CRÍTICA DO ONCO-CHIP
+				</div>
+			</div>
+
+			<div class="card bg-white p-3 border-0 rounded-3 shadow-sm">
+				<p class="fw-bold mb-3 text-accent">Resposta das Células ao Tratamento</p>
+
+			</div>
+		</div>
+
+		<div class="col-lg-4">
+			<div class="card bg-panel p-3 border-0 rounded-3 h-100">
+				<p class="fw-bold mb-2 text-accent">COMUNICAÇÃO</p>
+				<div class="p-2 rounded-3" style="background-color: var(--progress-track);">
+					<div class="small">
+						Mensagem do médico: Sua próxima consulta está marcada para o dia **01/12**, às **19hrs**.
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer-control text-end mt-4">
+		<button class="btn bg-accent text-white fw-bold py-2 px-4">Controle do Médico >></button>
+	</div>
+</div>

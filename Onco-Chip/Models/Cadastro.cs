@@ -9,13 +9,13 @@ namespace Onco_Chip.Models
 
         [Required(ErrorMessage = "O nome é obrigatório.")]
         [StringLength(100)]
-        public string Nome { get; set; }
+        public string? Nome { get; set; }
 
         [Required(ErrorMessage = "O E-mail é obrigatório.")]
         [EmailAddress(ErrorMessage = "E-mail inválido.")]
-        public string Email { get; set; }
+        public string? Email { get; set; }
 
         [Required(ErrorMessage = "Telefone inválido.")]
-        public string Telefone { get; set; }
+        public string? Telefone { get; set; }
     }
 }
