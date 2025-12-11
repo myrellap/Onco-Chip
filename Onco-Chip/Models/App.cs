@@ -14,7 +14,6 @@
 
         public int ProgressoTratamentoPercent { get; set; }
 
-
         public List<int> RespostaCelulas { get; set; } = new List<int>();
 
 
