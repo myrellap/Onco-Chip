@@ -54,7 +54,7 @@ namespace Onco_Chip.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CadastroId,Nome,Email,Telefone")] Cadastro cadastro)
+        public async Task<IActionResult> Create([Bind("CadastroId,NomeCompleto,Email,Telefone,CPF,Endereco,Cidade,CEP")] Cadastro cadastro)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace Onco_Chip.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("CadastroId,Nome,Email,Telefone")] Cadastro cadastro)
+        public async Task<IActionResult> Edit(int id, [Bind("CadastroId,NomeCompleto,Email,Telefone,CPF,Endereco,Cidade,CEP")] Cadastro cadastro)
         {
             if (id != cadastro.CadastroId)
             {
